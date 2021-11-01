@@ -1,15 +1,24 @@
 import {useState} from 'react';
 import BasketItem from "./BasketItem";
+import {moneyFormat} from '../MoneyFormat'
+
 function Basket({resetBasket, basket, products, total}) {
     return (
         <div className="basket">
-            { basket.map(item => (
-                <BasketItem item={item} product={products.find(product => product.id === item.id)}/>
-            ))}
-            <div>
-                Total: ${total}
+            <div className="product-items product-title">
+                <span>Ürün Adı</span>
+                <span>Adet</span>
+                <span>Toplam Fiyatı</span>
             </div>
-            <button onClick={resetBasket}>Sepeti Boşalt</button>
+            { basket.map(item => (
+                <BasketItem key={item.id} item={item} product={products.find(product => product.id === item.id)}/>
+            ))}
+            <div className="total">
+                ${moneyFormat(total)}
+            </div>
+            <div className="btn-reset">
+                <button onClick={resetBasket}>Sepeti Boşalt</button>
+            </div>
         </div>
     );
 }
