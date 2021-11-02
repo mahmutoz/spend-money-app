@@ -11,7 +11,7 @@ function Header({money, total}) {
                     start={money}
                     end={money - total}
                     duration={0.7}
-                    separator=" "
+                    separator="."
                     decimals={1}
                     decimal=","
                     prefix="$ "

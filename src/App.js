@@ -30,12 +30,12 @@ function App() {
                    total={total}
           />
       ))}
-      {
-        total > 0 && (
-            <Basket resetBasket={resetBasket} basket={basket} total={total} products={products}/>
-        )
-      }
     </div>
+    {
+      total > 0 && (
+          <Basket resetBasket={resetBasket} basket={basket} total={total} products={products}/>
+      )
+    }
   </>
   );
 }
