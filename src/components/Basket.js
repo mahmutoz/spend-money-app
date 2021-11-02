@@ -6,9 +6,9 @@ function Basket({resetBasket, basket, products, total}) {
     return (
         <div className="basket">
             <div className="product-items product-title">
-                <span>Ürün Adı</span>
-                <span>Adet</span>
-                <span>Toplam Fiyatı</span>
+                <span>Product Name</span>
+                <span>Pieces</span>
+                <span>Total Price</span>
             </div>
             { basket.map(item => (
                 <BasketItem key={item.id} item={item} product={products.find(product => product.id === item.id)}/>
@@ -17,7 +17,7 @@ function Basket({resetBasket, basket, products, total}) {
                 ${moneyFormat(total)}
             </div>
             <div className="btn-reset">
-                <button onClick={resetBasket}>Sepeti Boşalt</button>
+                <button onClick={resetBasket}>Empty Cart</button>
             </div>
         </div>
     );
